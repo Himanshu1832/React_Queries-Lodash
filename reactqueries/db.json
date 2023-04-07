@@ -1,0 +1,19 @@
+{
+    "superheroes":[
+        {
+            "id":1,
+            "name":"Batman",
+            "publisher":"DC Comics"
+        },
+        {
+            "id":2,
+            "name":"Spiderman",
+            "publisher":"Marvel Comics"
+        },
+        {
+            "id":3,
+            "name":"superman",
+            "publisher":"Clark Kent"
+        }
+    ]
+}
