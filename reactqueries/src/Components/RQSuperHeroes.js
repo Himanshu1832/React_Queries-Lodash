@@ -8,7 +8,7 @@ const fetchSuperHeroes = async () => {
 }
 
 const RQSuperHeroes = () => {
-    const {isLoading , data , isError , error , isFetching} = useQuery('superheroes',
+    const {isLoading , data , isError , error , isFetching , refetch} = useQuery('superheroes',
     // () => {
     //     return axios.get('http://localhost:4000/superheroes')
          fetchSuperHeroes,
@@ -25,6 +25,13 @@ const RQSuperHeroes = () => {
             // refetchOnWindowFocus: 'always',    // Always ignore the staleTime and always refetch on window focus
 
 
+            //
+
+
+            // refetchInterval: 5000, // default
+
+            enabled: false,
+
          })
 
     if(isLoading) return (<div>Loading...</div>)
@@ -36,12 +43,13 @@ const RQSuperHeroes = () => {
             <div>
                 <h1>RQ SuperHeroes Page</h1>
                 {
-                    data.data.map((item, index) => (
+                    data?.data.map((item, index) => (
                         <div key={index}>
                             <h3>{item.name}</h3>
                         </div>
                     ))
                 }
+                <button onClick={refetch}>Fetch Data</button>
             </div>
         </div>
     )
