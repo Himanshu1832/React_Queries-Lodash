@@ -13,8 +13,18 @@ const RQSuperHeroes = () => {
     //     return axios.get('http://localhost:4000/superheroes')
          fetchSuperHeroes,
          {
-            // cacheTime: 5000,
-            staleTime: 30000,
+
+
+            staleTime: 30000, // default
+
+            // refetchOnMount: false, 
+            // refetchOnMount: true, // default  
+
+            // refetchOnWindowFocus: false,
+            refetchOnWindowFocus: true,
+            // refetchOnWindowFocus: 'always',    // Always ignore the staleTime and always refetch on window focus
+
+
          })
 
     if(isLoading) return (<div>Loading...</div>)
