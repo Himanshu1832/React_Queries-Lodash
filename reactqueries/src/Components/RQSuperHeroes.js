@@ -8,14 +8,18 @@ const fetchSuperHeroes = async () => {
 }
 
 const RQSuperHeroes = () => {
-    const {isLoading , data , isError , error} = useQuery('superheroes',
+    const {isLoading , data , isError , error , isFetching} = useQuery('superheroes',
     // () => {
     //     return axios.get('http://localhost:4000/superheroes')
-         fetchSuperHeroes)
+         fetchSuperHeroes,
+         {
+            // cacheTime: 5000,
+            staleTime: 30000,
+         })
 
-         console.log(data)
     if(isLoading) return (<div>Loading...</div>)
     if(isError) return (<div>{error.message}</div>)
+    console.log({isLoading, isFetching})
 
     return (
         <div>
