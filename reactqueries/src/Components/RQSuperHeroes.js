@@ -8,6 +8,16 @@ const fetchSuperHeroes = async () => {
 }
 
 const RQSuperHeroes = () => {
+
+
+    // const onSuccess = (data)=>{
+    //     console.log('onSuccess',data)
+    // }
+    // const onError = (error)=>{
+    //     console.log('onError',error)
+    // }
+
+
     const {isLoading , data , isError , error , isFetching , refetch} = useQuery('superheroes',
     // () => {
     //     return axios.get('http://localhost:4000/superheroes')
@@ -15,13 +25,13 @@ const RQSuperHeroes = () => {
          {
 
 
-            staleTime: 30000, // default
+            // staleTime: 30000, // default
 
             // refetchOnMount: false, 
             // refetchOnMount: true, // default  
 
             // refetchOnWindowFocus: false,
-            refetchOnWindowFocus: true,
+            // refetchOnWindowFocus: true,
             // refetchOnWindowFocus: 'always',    // Always ignore the staleTime and always refetch on window focus
 
 
@@ -30,7 +40,10 @@ const RQSuperHeroes = () => {
 
             // refetchInterval: 5000, // default
 
-            enabled: false,
+            // enabled: false,
+
+            // onError,
+            // onSuccess,
 
          })
 
@@ -49,7 +62,7 @@ const RQSuperHeroes = () => {
                         </div>
                     ))
                 }
-                <button onClick={refetch}>Fetch Data</button>
+                {/* <button onClick={refetch}>Fetch Data</button> */}
             </div>
         </div>
     )
