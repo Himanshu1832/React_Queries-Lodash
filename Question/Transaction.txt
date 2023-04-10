@@ -1,0 +1,21 @@
+import { Transaction } from 'sequelize';
+
+async function yourTransaction(): Promise<void> {
+  const t: Transaction = await sequelize.transaction();
+
+  try {
+    // perform your database operations here
+    // for example, inserting a new record
+    await YourModel.create({
+      name: 'test',
+      value: 123,
+    }, { transaction: t });
+
+    // commit the transaction
+    await t.commit();
+  } catch (err) {
+    // rollback the transaction if any error occurs
+    await t.rollback();
+    throw err;
+  }
+}

@@ -1,0 +1,26 @@
+Middleware: Middleware is a function that runs before the route handler and can modify the request or response objects, as well as invoke the next middleware in the chain. NestJS provides a wide range of built-in middleware, such as CORS, compression, and helmet, and also allows developers to create their own custom middleware.
+
+Interceptors: Interceptors are functions that can intercept incoming requests or outgoing responses and modify them. NestJS provides two types of interceptors: global interceptors and local interceptors. Global interceptors apply to all requests and responses in the application, while local interceptors only apply to specific routes or controllers.
+
+   bind extra logic before / after method execution
+   transform the result returned from a function
+   transform the exception thrown from a function
+   extend the basic function behavior
+   completely override a function depending on specific conditions (e.g., for caching purposes)
+
+
+
+Pipes: Pipes are a powerful feature in NestJS that allow developers to perform data transformation, validation, and sanitization. Pipes can be used to validate incoming data, convert data types, and reject requests with invalid data.
+
+transformation: transform input data to the desired form (e.g., from string to integer)
+validation: evaluate input data and if valid, simply pass it through unchanged; otherwise, throw an exception
+
+
+
+Filters: Filters are functions that can handle errors thrown by route handlers and return an appropriate response to the client. NestJS provides built-in exception filters, such as the HttpExceptionFilter, which can handle HTTP exceptions and return an appropriate response.
+
+Guards: Guards are functions that can prevent requests from reaching the route handler based on certain conditions. Guards can be used to restrict access to certain routes or controllers based on authentication status, role-based permissions, or other criteria.
+
+Controllers: Controllers are responsible for handling incoming requests and returning responses to the client. Controllers define routes and route handlers, which are responsible for processing incoming requests and returning a response.
+
+Providers: Providers are a fundamental concept in NestJS that are used to manage dependencies in the application. Providers can be used to manage database connections, HTTP clients, and other resources required by the application.

@@ -45,6 +45,9 @@ const RQSuperHeroes = () => {
             // onError,
             // onSuccess,
 
+
+            //Newbranch newreactquery
+
          })
 
     if(isLoading) return (<div>Loading...</div>)
