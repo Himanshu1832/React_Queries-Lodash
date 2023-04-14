@@ -5,6 +5,7 @@ import SuperHeroes from './Components/SuperHeroes';
 import RQSuperHeroes from './Components/RQSuperHeroes';
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import Lodash from './Components/Lodash';
 
 const queryClient = new QueryClient()
 function App() {
@@ -23,12 +24,17 @@ function App() {
             <li>
               <Link to="/rqsuperheroes">RQSuperHeroes</Link>
             </li>
+            <li>
+              <Link to="/lodash">Lodash</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
           
           <Route path="/superheroes" element={<SuperHeroes />} />
           <Route path="/rqsuperheroes" element={<RQSuperHeroes />} />
+          <Route path="/lodash" element={<Lodash />} />
+
           <Route path="/" element={<Home />} />
           
         </Routes>
